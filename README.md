@@ -1,33 +1,24 @@
 # 🧠 arxiv-daily-mcp
 
-> **Search arXiv in Korean, Chinese, or Japanese — and save findings to your local Markdown vault.**
+> **A Model Context Protocol (MCP) server that wraps an arXiv CLI workflow.**
+> Search arXiv in 🇰🇷 Korean, 🇨🇳 Chinese, 🇯🇵 Japanese, or 🇺🇸 English — and save findings to a local Markdown vault.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
 [![MCP](https://img.shields.io/badge/MCP-1.0+-green.svg)](https://modelcontextprotocol.io)
-[![PlayMCP](https://img.shields.io/badge/PlayMCP-compatible-FFCD00.svg)](https://playmcp.kakao.com)
 [![GitHub stars](https://img.shields.io/github/stars/nerin81-netizen/arxiv-daily-mcp)](https://github.com/nerin81-netizen/arxiv-daily-mcp/stargazers)
-
-A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for arXiv paper search and personal-note archival. The first arXiv MCP with **multilingual keyword support** and a **local Markdown note vault** built in.
 
 [🚀 Quickstart](#-quickstart) · [🛠 Tools](#-tools-4) · [🎬 Demo](#-demo) · [🆚 vs other arXiv MCPs](#-how-it-differs-from-existing-arxiv-mcps) · [🏗 Architecture](#-architecture) · [🧪 Development](#-development) · [🌐 Multilingual](#-multilingual-keywords)
 
 ---
 
-## ✨ Why this MCP
+## ✨ What this is
 
-Most arXiv MCPs are English-only and return raw data. This one is built for non-English researchers who think in their own language and want to **archive** what they find.
+A simple MCP server that exposes a useful arXiv workflow as LLM-callable tools. The core idea:
 
-| | `blazickjp/arxiv-mcp-server` ⭐ 2,933 | `mcp-simple-arxiv` ⭐ 198 | `arxiv-daily-mcp` (this) |
-|---|---|---|---|
-| **Keyword languages** | 🇺🇸 English only | 🇺🇸 English only | 🇰🇷🇨🇳🇯🇵🇺🇸 **4 languages** |
-| **Output format** | JSON / raw data | Text only | **Markdown card-news** (emoji + bullets) |
-| **Note archive** | ❌ | ❌ | ✅ **Local `.md` vault** |
-| **Note search** | ❌ | ❌ | ✅ `list_my_notes(keyword=…)` |
-| **Messenger-friendly** | ❌ | ❌ | ✅ **카카오 PlayMCP optimized** |
-| **Status** | Maintained | Maintained | Active (v0.1.0) |
+> **Take a CLI script that you already run every day, and wrap it in MCP so you can invoke it with natural language from any MCP client.**
 
-> 🎯 **Positioning:** Of 466 existing arXiv MCP repositories on GitHub, this is the only one designed for the **Korean / Chinese / Japanese research workflow** with first-class Kakao messenger support.
+If you've ever found yourself typing the same `curl` / `python` / `arxiv` query into a terminal every morning — this is what that looks like as an MCP tool.
 
 ## 🛠 Tools (4)
 
@@ -107,12 +98,9 @@ pip install -e ".[dev]"
 }
 ```
 
-#### 카카오 PlayMCP
+#### Any MCP-compatible client
 
-1. Visit https://playmcp.kakao.com
-2. Click **Submit MCP** → choose **stdio transport**
-3. Set command to `arxiv-daily-mcp`
-4. Pick category: `연구 / 리서치`
+This server uses the standard `stdio` transport and exposes 4 tools via JSON-RPC — it works with any client that follows the [MCP spec](https://modelcontextprotocol.io).
 
 ## 🎬 Demo
 
@@ -121,7 +109,7 @@ pip install -e ".[dev]"
 ```text
 👤 에이전트 관련 논문 찾아줘
 
-🤖 Claude (PlayMCP):
+🤖 Claude:
 🔍 '에이전트' 검색 결과 — 🇰🇷 한국어 → 영어: 'agent' (5편)
 
 1. **Distributed Attacks in Persistent-State AI Control**
@@ -135,7 +123,7 @@ pip install -e ".[dev]"
 ```text
 👤 智能体 相关论文
 
-🤖 Claude (PlayMCP):
+🤖 Claude:
 🔍 '智能体' 검색 결과 — 🇨🇳 中文 → 영어: 'agent' (5편)
 ```
 
@@ -144,7 +132,7 @@ pip install -e ".[dev]"
 ```text
 👤 エージェント 論文を探して
 
-🤖 Claude (PlayMCP):
+🤖 Claude:
 🔍 'エージェント' 검색 결과 — 🇯🇵 日本語 → 영어: 'agent' (5편)
 ```
 
@@ -153,12 +141,12 @@ pip install -e ".[dev]"
 ```text
 👤 첫 번째 논문 메모해줘 — 멀티에이전트 보안 흥미롭다
 
-🤖 Claude (PlayMCP):
+🤖 Claude:
 ✅ 저장 완료: `~/memos/2026-07-06_arxiv_2607.02514.md`
 
 👤 내 메모 보여줘
 
-🤖 Claude (PlayMCP):
+🤖 Claude:
 📚 내 arXiv 노트 (1개)
   · `2026-07-06_arxiv_2607.02514.md` — Distributed Attacks in Persistent-State AI Control
 ```
@@ -167,19 +155,19 @@ pip install -e ".[dev]"
 
 GitHub has **466+ arXiv MCP repositories** (as of 2026-07-05). The most popular, `blazickjp/arxiv-mcp-server`, is excellent — but built for a different audience.
 
+| | `blazickjp/arxiv-mcp-server` ⭐ 2,933 | `mcp-simple-arxiv` ⭐ 198 | `arxiv-daily-mcp` (this) |
+|---|---|---|---|
+| **Keyword languages** | 🇺🇸 English only | 🇺🇸 English only | 🇰🇷🇨🇳🇯🇵🇺🇸 **4 languages** |
+| **Output format** | JSON / raw data | Text only | **Markdown card-news** (emoji + bullets) |
+| **Note archive** | ❌ | ❌ | ✅ **Local `.md` vault** |
+| **Note search** | ❌ | ❌ | ✅ `list_my_notes(keyword=…)` |
+| **Status** | Maintained | Maintained | Active (v0.1.0) |
+
 ### Three reasons it can coexist
 
-1. **Different language audience.** The 2,933-star leader is English-only, with no Chinese / Japanese / Korean entry points. This server is designed for non-English researchers first.
-2. **Different output shape.** The leader returns raw JSON / data tables. This server returns **messenger-friendly card-news** Markdown — readable directly inside KakaoTalk, Line, WeChat, Slack, Discord.
-3. **Different workflow.** The leader is a search-and-read tool. This server includes **archival**: save a paper to your local Markdown vault with one sentence, then `list_my_notes` to recall it later.
-
-### The three validation questions
-
-When evaluating whether a saturated niche is still winnable:
-
-- **"Is the leader doing this?"** No — they don't have multilingual keywords, messenger formatting, or local note archival.
-- **"Why haven't they done it?"** Because the leader targets the global English-speaking LLM developer market. The Korean / Chinese / Japanese research-in-messenger market is too small for their roadmap.
-- **"Can I demo the difference in 5 minutes?"** Yes — type "에이전트 논문" in any language and watch it return translated results, then "메모해줘" to save.
+1. **Different language audience.** The 2,933-star leader is English-only. This server is designed for non-English researchers first.
+2. **Different output shape.** The leader returns raw JSON / data tables. This server returns **card-news Markdown** — readable directly inside any chat UI.
+3. **Different workflow.** The leader is search-and-read. This server includes **archival**: save a paper to your local Markdown vault with one sentence, then `list_my_notes` to recall it later.
 
 ## 🌐 Multilingual keywords
 
@@ -205,7 +193,7 @@ Unknown keywords are passed through as-is — so a partial match still searches 
 ```
 ┌─────────────────┐      stdio/JSON-RPC      ┌──────────────────────┐
 │  LLM Client     │ ◀──────────────────────▶ │  arxiv-daily-mcp     │
-│  (Claude/PlayMCP) │                          │  (FastMCP server)    │
+│  (Claude/Cursor) │                          │  (FastMCP server)    │
 └─────────────────┘                          └──────────┬───────────┘
                                                         │ urllib
                                                         ▼
@@ -223,7 +211,7 @@ Unknown keywords are passed through as-is — so a partial match still searches 
 
 **Key design choices:**
 
-- **stdio transport** — MCP standard, PlayMCP-compatible
+- **stdio transport** — MCP standard
 - **FastMCP** — Anthropic's official Python SDK
 - **urllib only** — zero external HTTP dependencies (works in any minimal Python environment)
 - **In-process translation dictionary** — no LLM call, no rate limit, no per-keyword latency

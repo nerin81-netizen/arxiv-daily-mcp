@@ -5,13 +5,13 @@ build-backend = "hatchling.build"
 [project]
 name = "arxiv-daily-mcp"
 version = "0.1.0"
-description = "arXiv 논문 검색/저장 MCP 서버 — 카카오 PlayMCP + Claude Desktop 호환"
+description = "MCP server wrapping an arXiv CLI workflow — multilingual search (KO/ZH/JA/EN) and local Markdown note archival"
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
     { name = "arxiv-daily-mcp contributors" },
 ]
-keywords = ["mcp", "arxiv", "ai", "research", "playmcp", "kakao", "claude", "agent"]
+keywords = ["mcp", "arxiv", "ai", "research", "multilingual", "claude", "agent", "model-context-protocol"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
