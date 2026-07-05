@@ -22,7 +22,7 @@ from mcp.server.fastmcp import FastMCP
 NS = {"a": "http://www.w3.org/2005/Atom"}
 KST = timezone(timedelta(hours=9))
 ARXIV_API = "https://export.arxiv.org/api/query"
-USER_AGENT = "arxiv-daily-mcp/0.1.0 (Hermes Agent; https://github.com/nerin81-netizen/arxiv-daily-mcp)"
+USER_AGENT = "arxiv-daily-mcp/0.1.0 (https://github.com/nerin81-netizen/arxiv-daily-mcp)"
 MEMO_DIR = Path("/opt/data/memos")
 
 CATEGORIES = {
@@ -339,7 +339,7 @@ async def save_paper_note(arxiv_id: str, note: str = "") -> str:
 {note or '_(작성 예정)_'}
 
 ---
-*Saved by arxiv-daily-mcp · Hermes Agent*
+*Saved by arxiv-daily-mcp*
 """
     out.write_text(content, encoding="utf-8")
     return f"✅ 저장 완료: `{out}`"

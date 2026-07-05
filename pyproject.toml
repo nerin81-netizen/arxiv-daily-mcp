@@ -9,7 +9,7 @@ description = "arXiv 논문 검색/저장 MCP 서버 — 카카오 PlayMCP + Cla
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-    { name = "상학", email = "nerin81@gmail.com" },
+    { name = "arxiv-daily-mcp contributors" },
 ]
 keywords = ["mcp", "arxiv", "ai", "research", "playmcp", "kakao", "claude", "agent"]
 classifiers = [
@@ -40,9 +40,9 @@ dev = [
 arxiv-daily-mcp = "arxiv_daily_mcp.server:main"
 
 [project.urls]
-Homepage = "https://github.com/sanghak/arxiv-daily-mcp"
-Repository = "https://github.com/sanghak/arxiv-daily-mcp"
-Issues = "https://github.com/sanghak/arxiv-daily-mcp/issues"
+Homepage = "https://github.com/nerin81-netizen/arxiv-daily-mcp"
+Repository = "https://github.com/nerin81-netizen/arxiv-daily-mcp"
+Issues = "https://github.com/nerin81-netizen/arxiv-daily-mcp/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/arxiv_daily_mcp"]
