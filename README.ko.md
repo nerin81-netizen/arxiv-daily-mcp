@@ -6,10 +6,8 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
 [![MCP](https://img.shields.io/badge/MCP-1.0+-green.svg)](https://modelcontextprotocol.io)
-[![English](https://img.shields.io/badge/README-English-blue)](README.md)
-[![한국어](https://img.shields.io/badge/README-한국어-red)](README.ko.md)
-[![中文](https://img.shields.io/badge/README-中文-yellow)](README.zh.md)
-[![日本語](https://img.shields.io/badge/README-日本語-green)](README.ja.md)
+
+**🌍 언어 선택:** [English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
 [🚀 빠른 시작](#-빠른-시작) · [🛠 도구 4개](#-도구-4개) · [🎬 데모](#-데모) · [🆚 다른 arXiv MCP와 비교](#-다른-arxiv-mcp와-차이점) · [🌐 다국어 키워드](#-다국어-키워드) · [🏗 아키텍처](#-아키텍처)
 
@@ -106,6 +104,8 @@ pip install -e ".[dev]"
 #### 다른 MCP 호환 클라이언트
 
 표준 `stdio` transport와 JSON-RPC를 사용하므로 [MCP 스펙](https://modelcontextprotocol.io)을 따르는 모든 클라이언트에서 작동합니다.
+
+**🌍 언어 선택:** [English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
 ## 🎬 데모
 

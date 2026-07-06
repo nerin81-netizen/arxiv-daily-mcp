@@ -6,10 +6,8 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
 [![MCP](https://img.shields.io/badge/MCP-1.0+-green.svg)](https://modelcontextprotocol.io)
-[![English](https://img.shields.io/badge/README-English-blue)](README.md)
-[![한국어](https://img.shields.io/badge/README-한국어-red)](README.ko.md)
-[![中文](https://img.shields.io/badge/README-中文-yellow)](README.zh.md)
-[![日本語](https://img.shields.io/badge/README-日本語-green)](README.ja.md)
+
+**🌍 言語を選ぶ:** [English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
 [🚀 クイックスタート](#-クイックスタート) · [🛠 ツール 4 個](#-ツール-4-個) · [🎬 デモ](#-デモ) · [🆚 他の arXiv MCP との違い](#-他の-arxiv-mcp-との違い) · [🌐 多言語キーワード](#-多言語キーワード) · [🏗 アーキテクチャ](#-アーキテクチャ)
 
@@ -106,6 +104,8 @@ pip install -e ".[dev]"
 #### その他の MCP 対応クライアント
 
 標準の `stdio` トランスポートと JSON-RPC を使用するため、[MCP 仕様](https://modelcontextprotocol.io) に従うすべてのクライアントで動作します。
+
+**🌍 言語を選ぶ:** [English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
 ## 🎬 デモ
 

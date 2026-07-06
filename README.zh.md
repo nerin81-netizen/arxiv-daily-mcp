@@ -6,10 +6,8 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
 [![MCP](https://img.shields.io/badge/MCP-1.0+-green.svg)](https://modelcontextprotocol.io)
-[![English](https://img.shields.io/badge/README-English-blue)](README.md)
-[![한국어](https://img.shields.io/badge/README-한국어-red)](README.ko.md)
-[![中文](https://img.shields.io/badge/README-中文-yellow)](README.zh.md)
-[![日本語](https://img.shields.io/badge/README-日本語-green)](README.ja.md)
+
+**🌍 选择语言:** [English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
 [🚀 快速开始](#-快速开始) · [🛠 4 个工具](#-4-个工具) · [🎬 演示](#-演示) · [🆚 与其他 arXiv MCP 的区别](#-与其他-arxiv-mcp-的区别) · [🌐 多语言关键词](#-多语言关键词) · [🏗 架构](#-架构)
 
@@ -106,6 +104,8 @@ pip install -e ".[dev]"
 #### 其他 MCP 兼容客户端
 
 使用标准 `stdio` 传输和 JSON-RPC 协议,适用于所有遵循 [MCP 规范](https://modelcontextprotocol.io) 的客户端。
+
+**🌍 选择语言:** [English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
 ## 🎬 演示
 
